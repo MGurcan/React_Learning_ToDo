@@ -7,6 +7,15 @@ import Header from "./Components/Header";
 import ToDoList from "./Components/ToDoList";
 import ToDoForm from "./Components/ToDoForm";
 
+function CalculateID(word){
+  var result = 0;
+  for(var i = 0; i<word.length; i++){
+    result += (i+1)*Number(word.charAt(i).charCodeAt(0));
+  }
+  return result;
+}
+
+
 function App() {
 
   const [ toDoList, setToDoList ] = useState(data);
@@ -23,7 +32,7 @@ function App() {
     if(userInput.replace(/ /g, "")=="")
       return;
     let copy = [...toDoList];
-    copy = [...copy, {id: toDoList.length+1, task: userInput, complete:false}];
+    copy = [...copy, {id: CalculateID(userInput), task: userInput, complete:false}];
     setToDoList(copy);
   };
 
