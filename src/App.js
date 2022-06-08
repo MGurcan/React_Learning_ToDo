@@ -12,6 +12,7 @@ function App() {
   const [ toDoList, setToDoList ] = useState(data);
 
   const handleToggle = (id) => {
+    console.log(id);
     let mapped = toDoList.map(task => {
       return task.id == Number(id) ? {...task, complete: !task.complete} : {...task};
     });
@@ -19,6 +20,8 @@ function App() {
   }
 
   const addTask = (userInput) => {
+    if(userInput.replace(/ /g, "")=="")
+      return;
     let copy = [...toDoList];
     copy = [...copy, {id: toDoList.length+1, task: userInput, complete:false}];
     setToDoList(copy);

@@ -4,7 +4,7 @@ import ToDo from "./ToDo";
 const ToDoList = ({toDoList, handleToggle})  => {
 
     return (
-        <div>
+        <div id="todoList">
         {toDoList.map(todo => {
             return (
                 <ToDo todo={todo} handleToggle={handleToggle}/>

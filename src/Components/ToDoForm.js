@@ -18,8 +18,12 @@ const ToDoForm = ({ addTask, removeDoneTasks }) => {
 
             <div id="removeTasks" onClick={removeDoneTasks}> Delete done tasks</div>
 
-            <input value={userInput} type="text" onChange={handleChange} placeholder="Enter task..."/>
-            <button>Submit</button>
+            <div className='inputArea'>
+                <input value={userInput} type="text" onChange={handleChange} placeholder="Enter task..." id="inputBar"/>
+            <button id="inputSubmitButton">Submit</button>
+            </div>
+
+            
         </form>
     );
 };
