@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 const ToDoForm = ({ addTask, removeDoneTasks }) => {
 
-    const [ userInput, setUserInput ] = useState('');
+    const [userInput, setUserInput] = useState('');
 
     const handleChange = (e) => {
         setUserInput(e.currentTarget.value)
@@ -19,11 +19,11 @@ const ToDoForm = ({ addTask, removeDoneTasks }) => {
             <div id="removeTasks" onClick={removeDoneTasks}> Delete done tasks</div>
 
             <div className='inputArea'>
-                <input value={userInput} type="text" onChange={handleChange} placeholder="Enter task..." id="inputBar"/>
-            <button id="inputSubmitButton">Submit</button>
+                <input value={userInput} type="text" onChange={handleChange} placeholder="Enter task..." id="inputBar" />
+                <button id="inputSubmitButton">Submit</button>
             </div>
 
-            
+
         </form>
     );
 };
